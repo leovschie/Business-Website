@@ -7,17 +7,64 @@ h1 {
 }
 
 body {
+    display: flex;
     margin: 0;
+    background-color: white;
+
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.maintext {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-flow: column wrap;
+    color: blue;
     background-color: white;
 }
 
-.imghomepages .header {
+.imageshomepage {
+    border: 1px solid red;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background: red;
+    margin-bottom: 3%;
+}
+
+.homepageimage1 {
+    align-self: center;
+    padding: 10px;
+    flex: 1.000758;
+}
+
+.homepageimage2 {
+    align-self: center;
+    padding: 10px;
+    flex: 1.068649;
+}
+
+.homepageimage3 {
+    align-self: center;
+    padding: 10px;
+    flex: 1.053846
+}
+
+.header {
     font-family: 'Roboto Mono', monospace;
     /* font-weight: bold; */
-    background-color: #fff;
+    background-color: white;
     position: fixed;
     width: 100%;
     z-index: 3;
+    border-bottom: 3px solid red;
 }
 
 .header ul {
@@ -26,22 +73,17 @@ body {
     list-style: none;
     overflow: hidden;
     background-color: #fff;
+    margin-right: 5%;
 
 }
 
 .header li a {
     display: block;
     padding: 20px 20px;
-    /* border-right: 1px solid red; */
     text-decoration: none;
     color: blue;
+    background-color: white;
     text-transform: uppercase;
-}
-
-.header li a:hover,
-.header .menu-btn:hover {
-    background-color: red;
-    text-decoration: underline;
 }
 
 .header .logo {
@@ -53,104 +95,178 @@ body {
     color: blue;
 }
 
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: red;
+    text-decoration: underline;
+}
+
+.menu-btn {
+    display: none;
+}
+
+
 .logo:hover {
     background-color: red;
     text-decoration: underline;
 }
 
 
-/* menu */
+
+
+.header li {
+    float: left;
+}
+
+.header li a {
+    padding: 20px 30px;
+}
 
 .header .menu {
-    clear: both;
-    max-height: 0;
-    transition: max-height .2s ease-out;
+    clear: none;
+    float: right;
+    max-height: none;
+
 }
 
-/* menu icon */
 
 .header .menu-icon {
-    cursor: pointer;
-    /* display: inline-block; */
-    float: right;
-    padding: 28px 20px;
-    position: relative;
-    user-select: none;
-}
-
-.header .menu-icon .navicon {
-    background: #333;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: background .2s ease-out;
-    width: 18px;
-}
-
-.header .menu-icon .navicon:before,
-.header .menu-icon .navicon:after {
-    background: #333;
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
-}
-
-.header .menu-icon .navicon:before {
-    top: 5px;
-}
-
-.header .menu-icon .navicon:after {
-    top: -5px;
-}
-
-/* menu btn */
-
-.header .menu-btn {
     display: none;
 }
 
-.header .menu-btn:checked~.menu {
-    max-height: 240px;
+.footer {
+    display: flex;
+    width: 100%;
+    height: 3%;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.header .menu-btn:checked~.menu-icon .navicon {
-    background: transparent;
+.instalink {
+    flex-flow: inline;
+    color: blue;
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
-.header .menu-btn:checked~.menu-icon .navicon:before {
-    transform: rotate(-45deg);
+.instalink:hover {
+    background-color: red;
+    text-decoration: underline;
 }
 
-.header .menu-btn:checked~.menu-icon .navicon:after {
-    transform: rotate(45deg);
-}
 
-.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
-    top: 0;
-}
 
-/* 48em = 768px */
 
-@media (min-width: 48em) {
-    .header li {
-        float: left;
+@media (max-width: 48em) {
+
+    body {
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
 
-    .header li a {
-        padding: 20px 30px;
+    .maintext {
+        display: flex;
+        margin: 0 auto;
+        color: white;
+        background: blue;
+        padding: 17%;
     }
+
+    .imageshomepage {
+        display: flex;
+        border-top: 1px solid red;
+        border-bottom: 1px solid red;
+        border-left: transparent;
+        border-right: transparent;
+        min-width: 0;
+        justify-content: center;
+        align-items: center;
+        background: red;
+    }
+
+    .homepageimage1,
+    .homepageimage2,
+    .homepageimage3 {
+        margin: 3%;
+    }
+
+
 
     .header .menu {
-        clear: none;
-        float: right;
-        max-height: none;
+        clear: both;
+        max-height: 0;
+        transition: max-height .2s ease-out;
     }
 
+
     .header .menu-icon {
+        cursor: pointer;
+        display: inline-block;
+        /* float: left; */
+        padding: 28px 20px;
+        position: relative;
+        user-select: none;
+        color: blue;
+    }
+
+    .header .menu-icon .navicon {
+        background: blue;
+        display: block;
+        position: relative;
+        height: 3px;
+        transition: background .2s ease-out;
+        width: 20px;
+
+    }
+
+    .header .menu-icon .navicon:before,
+    .header .menu-icon .navicon:after {
+        background: blue;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+    }
+
+    .header .menu-icon .navicon:before {
+        top: 5px;
+    }
+
+    .header .menu-icon .navicon:after {
+        top: -5px;
+    }
+
+    .header .menu-btn {
         display: none;
+    }
+
+    .header .menu-btn:checked~.menu {
+        max-height: 240px;
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon {
+        background: transparent;
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon:before {
+        transform: rotate(-45deg);
+    }
+
+    .header .menu-btn:checked~.menu-icon .navicon:after {
+        transform: rotate(45deg);
+    }
+
+    .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+    .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+        top: 0;
+    }
+
+    .footer {
+        justify-content: center;
+        align-items: flex-end;
     }
 }
